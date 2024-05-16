@@ -9,6 +9,7 @@ class Plugin extends Base
 {
     public function initialize()
     {
+        $this->template->hook->attach('template:project:dropdown', 'ProjectReports:project_dropdown/reports');
     }
 
     public function onStartup()

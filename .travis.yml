@@ -24,12 +24,12 @@ matrix:
 install:
   - git clone --depth 1 $KANBOARD_REPO
   - ln -s $TRAVIS_BUILD_DIR kanboard/plugins/$PLUGIN
+  - composer require phpoffice/phpword
 
 before_script:
   - cd kanboard
   - phpenv config-add tests/php.ini
   - composer install
-  - composer require phpoffice/phpword
   - ls -la plugins/
 
 script:

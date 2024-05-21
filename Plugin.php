@@ -12,6 +12,14 @@ class Plugin extends Base
         $this->template->hook->attach('template:project:dropdown', 'ProjectReports:project_dropdown/reports');
     }
 
+    public function getClasses() {
+        return [
+            'Plugin\ProjectReports\Model' => [
+                'TaskGettingModel',
+            ],
+        ];
+    }
+
     public function onStartup()
     {
         Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
